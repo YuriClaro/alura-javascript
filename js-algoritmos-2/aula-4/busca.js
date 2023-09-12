@@ -1,8 +1,13 @@
 const listaLivros = require('./arrayOrdenado');
 
 function busca(arrayOrdenado, de, ate, valorBuscado) {
+    console.log('de', 'ate', de, ate);
     const meio = Math.floor((de + ate) / 2);
     const atual = arrayOrdenado[meio];
+
+    if (de > ate) {
+        return -1;
+    }
 
     if (valorBuscado === atual.preco) {
         return meio;
@@ -18,4 +23,4 @@ function busca(arrayOrdenado, de, ate, valorBuscado) {
     }
 }
 
-console.log(busca(listaLivros, 0, listaLivros.length - 1, 20))
+console.log(busca(listaLivros, 0, listaLivros.length - 1, 36))
